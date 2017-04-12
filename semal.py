@@ -59,7 +59,8 @@ class Student(object):
             assert len(match.groups()) == 2
             rank = int(match.groups()[0])
             topic = match.groups()[1]
-            assert topic in topic_list, 'Invalid topic: {}'.format(topic)
+            assert topic in topic_list, \
+                    '{} has invalid topic: {}'.format(self.name, topic)
             self.ranking[topic] = rank
     def __str__(self):
         return 'Student: {}\nRanking: {}'.format(self.name, self.ranking)
