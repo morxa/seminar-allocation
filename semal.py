@@ -152,7 +152,9 @@ def main():
     keys = assignment.keys()
     keys.sort()
     for student in keys:
-        print('{}: {}'.format(student.name, assignment[student]))
+        topic = assignment[student]
+        print('{}: {} (Rank {})'.format(
+            student.name, topic, student.ranking[topic]))
 
 if __name__ == '__main__':
     main()
