@@ -57,7 +57,7 @@ class Student(object):
         for line in lines[1:]:
             match = re.match(pattern='(\d+)\s+(.*)$', string=line)
             assert len(match.groups()) == 2
-            rank = match.groups()[0]
+            rank = int(match.groups()[0])
             topic = match.groups()[1]
             assert topic in topic_list, 'Invalid topic: {}'.format(topic)
             self.ranking[topic] = rank
